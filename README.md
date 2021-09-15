@@ -15,7 +15,7 @@ There are too many features in the data set so following criteria were used to d
 3. Mutual Information: The dependence of the target on the remaining features was calculated using the mutual information classifier and features with mutual information number >=0.009 were selected for further analysis and the remaining features were dropped.
 ### Feature Engineering
 The data was found to be imbalanced in favor of True fire events (1s) constituting ~83.5% of the whole dataset. This is not conducive to a classification analysis as the classifier can classify all events as True and still give very high performance metrics (Accuracy, Precision, Recall) leading to an inaccurate model and also making it difficult to accurately compare different algorithms. Therefore the data was engineered to a create a balanced dataset using RandomOverSampler which duplicates the existing data points to increase the ratio of smaller category. This was used to increase the number of False instances to ~43% of the total dataset. 
-### Assessment parameters
+### Motivation for the model 
 The objective of this project is to create a model that will be able to predict a fire above decided threshold as a 'True' event based on provided weather station data. In this prediction a False Negative(FN) could cause unpreparedness and potential loss of life and property while a False Positive would only cause unnecessary economic costs. Keeping this in mind, the model is developed to maximize Recall (minimize FN) while the Precision is kept above a certain threshold(>90%).
 
 ### Classification models
