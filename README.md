@@ -39,11 +39,13 @@ The classification models are evaluated using the above performance metrics. To 
 #### Decision Tree Classifier
 Decision Tree classifier was trained on the train_data with Stratified 5-fold cross-validation. The model was optimized by performing tuning of the hyperparameter "max_depth" through iteration over different values of it (1 to 10). The results of the iteration are presented below.
 ![alt text](https://github.com/prernakabtiyal/California_Wildfire_Analysis/blob/main/Decision_tree_metrics.png)
+
 It is seen that the highest recall value where precision is higher than 90% is obtained with a max_depth = 2. The performance mertics at this max_depth are 
 Recall = 94.96%; Precision = 91.60%
 
 #### Random Forest Classifier
 Random Forest classifier was trained on the train_data with Stratified 5-fold cross-validation. The model was optimized by performing tuning of the hyperparameter "n_estimators" through iteration over different values from 10 to 100. The results of the iteration are presented below.
 ![alt text](https://github.com/prernakabtiyal/California_Wildfire_Analysis/blob/main/Random_forest_metrics.png)
+
 It is seen that the highest recall value where precision is higher than 90% is obtained with a n_estimators = 60. The performance mertics for 60 estimators are 
 Recall = 96.2%; Precision = 96.6%. Therefore, the Random FOrest Classifier is a better fir for this model.
