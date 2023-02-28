@@ -24,13 +24,15 @@ The objective of this project is to create a model that will be able to predict 
 
 ### Classification models
 Two different classification algorithms are tested to compare the performance metrics. Due to the presence of outliers and skewed data in many features 'tree-based' models are tested first.
+#### Train-test split
+The data is split using train_test_split where 75% of the data is kept as the training dataset (train_data).
 #### Performance Metrics
 As mentioned above, Recall is chosen as the most important metric and is maximized due to occurence False Negatives being more hazardous. However, since False positives could also cause unnecessary economic costs, their occurence is minimized by setting a high threshold bar on the Precesion value (>90%)
 
 #### Cross-validation
 The classification models are evaluated using the above performance metrics. To avoid overfitting the model to the training data, a Stratified 5-fold cross-validation is used and the avergaed performance metrics are reported.  
 #### Decision Tree Classifier
-
+Decision Tree classifier was trained on the train_data with Stratified 5-fold cross-validation. The model was optimized by performing hyperparameter tuning of the max_depth parameter through iterating over different values of it (1 to 10).
 
 
 #### Random Forest Classifier
