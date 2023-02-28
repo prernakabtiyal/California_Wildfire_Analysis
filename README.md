@@ -32,7 +32,8 @@ As mentioned above, Recall is chosen as the most important metric and is maximiz
 #### Cross-validation
 The classification models are evaluated using the above performance metrics. To avoid overfitting the model to the training data, a Stratified 5-fold cross-validation is used and the avergaed performance metrics are reported.  
 #### Decision Tree Classifier
-Decision Tree classifier was trained on the train_data with Stratified 5-fold cross-validation. The model was optimized by performing hyperparameter tuning of the max_depth parameter through iterating over different values of it (1 to 10).
+Decision Tree classifier was trained on the train_data with Stratified 5-fold cross-validation. The model was optimized by performing tuning of the hyperparameter "max_depth" through iteration over different values of it (1 to 10). The results of the iteration are presented below.
 
 
 #### Random Forest Classifier
+Random FOrest classifier was trained on the train_data with Stratified 5-fold cross-validation. The model was optimized by performing tuning of the hyperparameter "n_estimators" through iteration over different values from 10 to 100. The results of the iteration are presented below.
