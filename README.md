@@ -16,8 +16,11 @@ The data is found to be biased towards Class D and above fire events (more 1s th
 ### Feature Selection
 There are too many features in the data set so, the following criteria were used to drop features that do not seem to be significant for target prediction. 
 1. Low variance: Features with very low variance (<0.001) can be treated as approximately constant and do not impact the traget variable significantly and therefore they can be dropped from the analysis. As the features are not scaled, for each feature the normalized variance is compared to the threshold value. The column dropped due to low variance: 'Year'. This makes sense as the year in which fire occured is redundant to prediction is only relevant to obtain the relevant weather data.
-2. Correlation: Features which are highly correlated effectively convey the same information and therefore, only one feature can replace a set of correlated features. A Pearson correlation coefficient with a threshold of 0.8 was used to identify and remove  set of correlated features and replace them with one feature. The features dropped due to high correlation are: 'AvAirT_Max_3', 'MaxWndGst_5', 'AvAirT_AvDMin', 'AvHum_Min_3', 'AvHum_Min', 'AvAirT_AvDMax_3', 'AvAirT_Av_5', 'AvAirT_AvDMax', 'AvAirT_AvDMax_5', 'AvAirT_Max_5', 'AvAirT_AvDMin_3', 'MnWndSp_Av_5', 'AvAirT_AvDMin_5', 'AvHum_Av_5', 'Slr_Tot_5', 'AvHum_Max_5', 'AvHum_Min_5', 'MnWndDir_Av_5', 'AvAirT_Min_5', 'Precip_Tot_5'.
+2. Correlation: Features which are highly correlated effectively convey the same information and therefore, only one feature can replace a set of correlated features. A Pearson correlation coefficient with a threshold of 0.8 was used to identify and remove  set of correlated features and replace them with one feature.
+![alt text](https://github.com/prernakabtiyal/California_Wildfire_Analysis/blob/main/correlation_matrix.png)
+The features dropped due to high correlation are: 'AvHum_Min', 'AvHum_Min_5', 'AvAirT_Max_3', 'AvHum_Min_3', 'AvAirT_AvDMin_3', 'MaxWndGst_5', 'Slr_Tot_5', 'AvAirT_AvDMax_5', 'AvAirT_AvDMin_5', 'AvAirT_Min_5', 'Precip_Tot_5', 'AvAirT_Max_5', 'MnWndDir_Av_5', 'AvHum_Av_5', 'AvAirT_Av_5', 'AvAirT_AvDMin', 'AvAirT_AvDMax', 'AvAirT_AvDMax_3', 'AvHum_Max_5', 'MnWndSp_Av_5'.
 3. Mutual Information: The dependence of the target on the remaining features was calculated using the mutual information classifier and features with mutual information number >0.02 were selected for further analysis and the remaining features were dropped.
+![alt text](https://github.com/prernakabtiyal/California_Wildfire_Analysis/blob/main/info_gain.png)
 
 ### Motivation for the model 
 The objective of this project is to create a model that will be able to predict a Class D and above fires (greater than 100 acres burnt) as a 'True' event based on provided weather station data. In this prediction a False Negative(FN) could cause unpreparedness and potential loss of life and property while a False Positive would only cause unnecessary economic costs. Keeping this in mind, the model is developed to maximize Recall (minimize FN) while the Precision is kept above a certain threshold(>90%).
@@ -31,9 +34,11 @@ As mentioned above, Recall is chosen as the most important metric and is maximiz
 
 #### Cross-validation
 The classification models are evaluated using the above performance metrics. To avoid overfitting the model to the training data, a Stratified 5-fold cross-validation is used and the avergaed performance metrics are reported.  
+
 #### Decision Tree Classifier
 Decision Tree classifier was trained on the train_data with Stratified 5-fold cross-validation. The model was optimized by performing tuning of the hyperparameter "max_depth" through iteration over different values of it (1 to 10). The results of the iteration are presented below.
-
+![alt text](https://github.com/prernakabtiyal/California_Wildfire_Analysis/blob/main/Decision_tree_metrics.png)
 
 #### Random Forest Classifier
-Random FOrest classifier was trained on the train_data with Stratified 5-fold cross-validation. The model was optimized by performing tuning of the hyperparameter "n_estimators" through iteration over different values from 10 to 100. The results of the iteration are presented below.
+Random Forest classifier was trained on the train_data with Stratified 5-fold cross-validation. The model was optimized by performing tuning of the hyperparameter "n_estimators" through iteration over different values from 10 to 100. The results of the iteration are presented below.
+![alt text](https://github.com/prernakabtiyal/California_Wildfire_Analysis/blob/main/Random_forest_metrics.png)
