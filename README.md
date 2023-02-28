@@ -11,7 +11,7 @@ There are no missing values.
 Many features have a significant skew in distribution and also have outliers. Therefore, ML algorithmss that are robust to skewness in datat and outliers (not based on euclidean distance analysis) are chosen.
 
 #### Imbalanced data
-The data was found to be biased towards Class D and above fire events (more 1s than 0s). This is not conducive to a classification analysis as the classifier can classify all events as True and still give very high performance metrics (Accuracy, Precision, Recall) leading to an inaccurate model and also making it difficult to accurately compare different algorithms. Therefore, the data was oversampled using SMOTE to include more 0 events and balance the data. 
+The data is found to be biased towards Class D and above fire events (more 1s than 0s). This is not conducive to a classification analysis as the classifier can classify all events as True and still give very high performance metrics (Accuracy, Precision, Recall) leading to an inaccurate model and also making it difficult to accurately compare different algorithms. Therefore, the data was oversampled using SMOTE to include more 0 events and balance the data. 
 
 ### Feature Selection
 There are too many features in the data set so, the following criteria were used to drop features that do not seem to be significant for target prediction. 
