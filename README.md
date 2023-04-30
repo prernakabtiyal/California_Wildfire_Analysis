@@ -1,4 +1,4 @@
-# California_Wildfire_Analysis
+# California Wildfire Analysis
 In the recent years, wildfires in California have been in the news very frequently due to the threat they pose to wildlife, environment and human life and property. Due to the ongoing climate change, wilfires have become a common phenomenon. However, unlike other natural disasters, wildfires are tricky to predict and therefore, significantly disrupt the way of life due to lack of timely mediative actions. The unpredictability of wildfires also makes it very difficult for businesses such as construction, utility and insurance companies to accurately gauge the needs of clients in wildfire prone areas. Therefore, it is highly desirable to develop a model to perform wildfire risk assessment. In the presented project, a model is developed to classify wildfires in California into seven different categories based on the extent of burnt area (as per NWCG guidelines): 
 Class A: less than 0.25 acre;
 Class B: 0.25 acre or more, but less than 10 acres;
